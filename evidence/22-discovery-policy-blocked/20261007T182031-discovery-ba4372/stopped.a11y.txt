@@ -1,0 +1,39 @@
+--- frame (top) /
+(no content)
+--- frame banner /banner
+- table:
+  - rowgroup:
+    - row "Harbor Federal Credit Union HarborCore Teller 4.2 · Operator [secret:username]":
+      - cell "Harbor Federal Credit Union"
+      - cell "HarborCore Teller 4.2 · Operator [secret:username]"
+--- frame nav /nav
+- table:
+  - rowgroup:
+    - row "Member Lookup":
+      - cell "Member Lookup":
+        - link "Member Lookup":
+          - /url: /lookup
+    - row "Reports":
+      - cell "Reports":
+        - link "Reports":
+          - /url: /reports
+    - row "Admin Console":
+      - cell "Admin Console":
+        - link "Admin Console":
+          - /url: /admin
+    - row "Vendor Support":
+      - cell "Vendor Support":
+        - link "Vendor Support":
+          - /url: http://support.example.invalid/
+    - row "Sign Off":
+      - cell "Sign Off":
+        - link "Sign Off":
+          - /url: /logout
+--- frame main /home
+- table:
+  - rowgroup:
+    - row "Home Select a function from the menu.":
+      - cell "Home Select a function from the menu.":
+        - text: Home
+        - separator
+        - paragraph: Select a function from the menu.

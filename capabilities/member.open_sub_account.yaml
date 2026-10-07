@@ -1,0 +1,176 @@
+schema_version: '1'
+capability: member.open_sub_account
+version: 0.1.1
+status: approved
+description: Open a new {{account_type}} sub-account for member {{member_id}} with nickname {{nickname}} and an
+  opening deposit of {{deposit}}, confirm it, and read the confirmation number.
+app:
+  product: harborcore
+  versions: '*'
+entry: /
+params:
+  member_id:
+    type: string
+    pattern: \d{5}
+    sensitivity: pii
+  account_type:
+    type: string
+    sensitivity: pii
+  nickname:
+    type: string
+    sensitivity: pii
+  deposit:
+    type: string
+    sensitivity: pii
+outputs:
+  confirmation_number:
+    type: string
+    sensitivity: pii
+targets:
+  link_member_lookup:
+    description: link "Member Lookup"
+    locators:
+    - {kind: a11y, frame: [nav], role: link, name: Member Lookup}
+    - {kind: near_text, frame: [nav], role: link, text: Member Lookup}
+  textbox_member_number:
+    description: textbox in row "Member Number:"
+    locators:
+    - {kind: a11y, frame: [main], role: textbox, row: 'Member Number:'}
+    - {kind: near_text, frame: [main], role: textbox, text: 'Member Number:'}
+  button_search:
+    description: button "Search"
+    locators:
+    - {kind: a11y, frame: [main], role: button, name: Search}
+    - {kind: near_text, frame: [main], role: button, text: Search}
+  link_view:
+    description: link "View"
+    locators:
+    - {kind: a11y, frame: [main], role: link, name: View}
+    - {kind: near_text, frame: [main], role: link, text: View}
+  link_open_sub_account:
+    description: link "Open Sub-Account"
+    locators:
+    - {kind: a11y, frame: [main], role: link, name: Open Sub-Account}
+    - {kind: near_text, frame: [main], role: link, text: Open Sub-Account}
+  combobox_account_type:
+    description: combobox in row "Account Type:"
+    locators:
+    - {kind: a11y, frame: [main], role: combobox, row: 'Account Type:'}
+    - {kind: near_text, frame: [main], role: combobox, text: 'Account Type:'}
+  textbox_nickname:
+    description: textbox in row "Nickname:"
+    locators:
+    - {kind: a11y, frame: [main], role: textbox, row: 'Nickname:'}
+    - {kind: near_text, frame: [main], role: textbox, text: 'Nickname:'}
+  textbox_opening_deposit:
+    description: textbox in row "Opening Deposit:"
+    locators:
+    - {kind: a11y, frame: [main], role: textbox, row: 'Opening Deposit:'}
+    - {kind: near_text, frame: [main], role: textbox, text: 'Opening Deposit:'}
+  button_continue:
+    description: button "Continue"
+    locators:
+    - {kind: a11y, frame: [main], role: button, name: Continue}
+    - {kind: near_text, frame: [main], role: button, text: Continue}
+  button_confirm_and_open_account:
+    description: button "Confirm and Open Account"
+    locators:
+    - {kind: a11y, frame: [main], role: button, name: Confirm and Open Account}
+    - {kind: near_text, frame: [main], role: button, text: Confirm and Open Account}
+  cell_confirmation_number:
+    description: cell in row "Confirmation Number:"
+    locators:
+    - {kind: a11y, frame: [main], role: cell, row: 'Confirmation Number:', nth: 1}
+    - {kind: near_text, frame: [main], role: cell, text: 'Confirmation Number:'}
+  text_opening_deposit_must_be_at_least_5_:
+    description: text "Opening deposit must be at least $5.00."
+    locators:
+    - {kind: a11y, frame: [main], role: text, name: Opening deposit must be at least $5.00.}
+steps:
+- id: s1
+  action: click
+  target: link_member_lookup
+  risk: safe
+  note: Open Member Lookup to find the member
+  timeout_ms: 8000
+- id: s2
+  action: type
+  target: textbox_member_number
+  value: '{{member_id}}'
+  risk: safe
+  note: Enter member number
+  timeout_ms: 8000
+- id: s3
+  action: click
+  target: button_search
+  risk: safe
+  note: Search for the member
+  timeout_ms: 8000
+- id: s4
+  action: click
+  target: link_view
+  risk: safe
+  note: Open the member record
+  timeout_ms: 8000
+- id: s5
+  action: click
+  target: link_open_sub_account
+  risk: safe
+  note: Start opening a new sub-account
+  timeout_ms: 8000
+- id: s6
+  action: select
+  target: combobox_account_type
+  value: '{{account_type}}'
+  risk: safe
+  note: Choose account type
+  timeout_ms: 8000
+- id: s7
+  action: type
+  target: textbox_nickname
+  value: '{{nickname}}'
+  risk: safe
+  note: Enter nickname
+  timeout_ms: 8000
+- id: s8
+  action: type
+  target: textbox_opening_deposit
+  value: '{{deposit}}'
+  risk: safe
+  note: Enter opening deposit
+  timeout_ms: 8000
+- id: s9
+  action: click
+  target: button_continue
+  risk: safe
+  note: Submit the sub-account form
+  outcomes:
+  - name: OPENING_DEPOSIT_BELOW_MINIMUM
+    description: The sub-account was not opened because the opening deposit is below the $5.00 minimum.
+    when: text_opening_deposit_must_be_at_least_5_
+  timeout_ms: 8000
+- id: s10
+  action: click
+  target: button_confirm_and_open_account
+  risk: irreversible
+  note: Confirm and open the sub-account
+  timeout_ms: 8000
+- id: s11
+  action: extract
+  target: cell_confirmation_number
+  output: confirmation_number
+  risk: safe
+  note: Record the confirmation number of the opened sub-account
+  timeout_ms: 8000
+success: cell_confirmation_number
+provenance:
+  discovered_by: claude-opus-5-5
+  discovered_at: '2026-10-07T18:19:00.562+00:00'
+  discovery_run: 20261007T181831-discovery-ff004c
+  verified: true
+  verification:
+  - '20261007T181900-replay-bd3cd4: success (dry run)'
+  notes:
+  - param patterns and sensitivities are inferred; review before approval
+  - outcome OPENING_DEPOSIT_BELOW_MINIMUM learned by probe run 20261007T181903-replay-16e2f0 (claude-opus-5-5)
+  - approved by demo-reviewer

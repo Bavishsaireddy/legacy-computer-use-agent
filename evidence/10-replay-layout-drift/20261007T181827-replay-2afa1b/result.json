@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "capability": "member.read_savings_balance",
+  "version": "0.1.1",
+  "run_id": "20261007T181827-replay-2afa1b",
+  "outputs": {
+    "share_savings_balance": "[output:share_savings_balance]"
+  },
+  "outcome": null,
+  "error": null,
+  "side_effects": "none",
+  "recoveries": [
+    "login x1"
+  ],
+  "warnings": [
+    "drift: 'textbox in row \"Member Number:\"' matched by fallback locator #1 (near_text); earlier: a11y: 0 matches"
+  ],
+  "handoffs": 0
+}

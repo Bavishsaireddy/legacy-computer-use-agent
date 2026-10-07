@@ -1,0 +1,19 @@
+{"seq": 1, "ts": "2026-10-07T18:19:29.301+00:00", "type": "run_started", "kind": "replay", "name": "member.open_sub_account"}
+{"seq": 2, "ts": "2026-10-07T18:19:29.302+00:00", "type": "replay_started", "capability": "member.open_sub_account", "version": "0.1.1", "status": "approved", "tenant": "harbor", "params": {"member_id": "{{member_id}}", "account_type": "{{account_type}}", "nickname": "{{nickname}}", "deposit": "{{deposit}}"}, "dry_run": false}
+{"seq": 3, "ts": "2026-10-07T18:19:29.588+00:00", "type": "session_opened", "tenant": "harbor", "product": "harborcore", "origin": "127.0.0.1:8765", "overrides": [], "unused_overrides": []}
+{"seq": 4, "ts": "2026-10-07T18:19:29.922+00:00", "type": "recovery_applied", "name": "login", "then": "restart", "count": 1}
+{"seq": 5, "ts": "2026-10-07T18:19:30.142+00:00", "type": "step_done", "step": "s1", "action": "click", "target": "link_member_lookup", "risk": "safe"}
+{"seq": 6, "ts": "2026-10-07T18:19:30.176+00:00", "type": "step_done", "step": "s2", "action": "type", "target": "textbox_member_number", "risk": "safe"}
+{"seq": 7, "ts": "2026-10-07T18:19:30.369+00:00", "type": "step_done", "step": "s3", "action": "click", "target": "button_search", "risk": "safe"}
+{"seq": 8, "ts": "2026-10-07T18:19:30.571+00:00", "type": "step_done", "step": "s4", "action": "click", "target": "link_view", "risk": "safe"}
+{"seq": 9, "ts": "2026-10-07T18:19:30.769+00:00", "type": "step_done", "step": "s5", "action": "click", "target": "link_open_sub_account", "risk": "safe"}
+{"seq": 10, "ts": "2026-10-07T18:19:30.811+00:00", "type": "step_done", "step": "s6", "action": "select", "target": "combobox_account_type", "risk": "safe"}
+{"seq": 11, "ts": "2026-10-07T18:19:30.826+00:00", "type": "step_done", "step": "s7", "action": "type", "target": "textbox_nickname", "risk": "safe"}
+{"seq": 12, "ts": "2026-10-07T18:19:30.840+00:00", "type": "step_done", "step": "s8", "action": "type", "target": "textbox_opening_deposit", "risk": "safe"}
+{"seq": 13, "ts": "2026-10-07T18:19:31.035+00:00", "type": "step_done", "step": "s9", "action": "click", "target": "button_continue", "risk": "safe"}
+{"seq": 14, "ts": "2026-10-07T18:19:31.234+00:00", "type": "step_done", "step": "s10", "action": "click", "target": "button_confirm_and_open_account", "risk": "irreversible"}
+{"seq": 15, "ts": "2026-10-07T18:19:31.264+00:00", "type": "failure", "kind": "UNSAFE_RESTART", "phase": "wait", "step": "s11", "expected": "login requires restarting the flow", "observed": "side effects are unknown"}
+{"seq": 16, "ts": "2026-10-07T18:19:31.302+00:00", "type": "intervention_requested", "id": "20261007T181929-replay-cd0b2a-h1", "run_id": "20261007T181929-replay-cd0b2a", "kind": "stuck", "capability": "member.open_sub_account@0.1.1", "goal": "", "step": "s11", "reason": "UNSAFE_RESTART while waiting: side effects are unknown", "expected": "login requires restarting the flow", "screenshot": "evidence/20-replay-expiry-at-commit/20261007T181929-replay-cd0b2a/failure-1.png", "snapshot": "evidence/20-replay-expiry-at-commit/20261007T181929-replay-cd0b2a/failure-1.a11y.txt", "options": ["done", "abort"]}
+{"seq": 17, "ts": "2026-10-07T18:19:31.303+00:00", "type": "intervention_unrouted", "id": "20261007T181929-replay-cd0b2a-h1"}
+{"seq": 18, "ts": "2026-10-07T18:19:31.303+00:00", "type": "control_history", "transfers": []}
+{"seq": 19, "ts": "2026-10-07T18:19:31.303+00:00", "type": "run_finished", "status": "needs_human", "side_effects": "unknown", "error": "UNSAFE_RESTART"}

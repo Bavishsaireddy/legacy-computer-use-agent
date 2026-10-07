@@ -1,0 +1,39 @@
+--- frame (top) /
+(no content)
+--- frame banner /banner
+- table:
+  - rowgroup:
+    - row "Harbor Federal Credit Union HarborCore Teller 4.2 · Operator [secret:username]":
+      - cell "Harbor Federal Credit Union"
+      - cell "HarborCore Teller 4.2 · Operator [secret:username]"
+--- frame nav /nav
+- table:
+  - rowgroup:
+    - row "Member Lookup":
+      - cell "Member Lookup":
+        - link "Member Lookup":
+          - /url: /lookup
+    - row "Reports":
+      - cell "Reports":
+        - link "Reports":
+          - /url: /reports
+    - row "Admin Console":
+      - cell "Admin Console":
+        - link "Admin Console":
+          - /url: /admin
+    - row "Vendor Support":
+      - cell "Vendor Support":
+        - link "Vendor Support":
+          - /url: http://support.example.invalid/
+    - row "Sign Off":
+      - cell "Sign Off":
+        - link "Sign Off":
+          - /url: /logout
+--- frame main /lookup
+- table:
+  - rowgroup:
+    - 'row "Application Error HC-5001: An unexpected error occurred. Contact support."':
+      - 'cell "Application Error HC-5001: An unexpected error occurred. Contact support."':
+        - text: Application Error
+        - separator
+        - paragraph: "HC-5001: An unexpected error occurred. Contact support."

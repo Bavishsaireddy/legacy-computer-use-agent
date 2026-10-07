@@ -1,0 +1,19 @@
+{
+  "status": "business_outcome",
+  "capability": "member.read_savings_balance",
+  "version": "0.1.1",
+  "run_id": "20261007T181819-replay-3b4afa",
+  "outputs": {},
+  "outcome": {
+    "name": "PERMISSION_DENIED",
+    "description": "the operator is not authorised to view this record",
+    "message": "You are not authorized to view this member record."
+  },
+  "error": null,
+  "side_effects": "none",
+  "recoveries": [
+    "login x1"
+  ],
+  "warnings": [],
+  "handoffs": 0
+}

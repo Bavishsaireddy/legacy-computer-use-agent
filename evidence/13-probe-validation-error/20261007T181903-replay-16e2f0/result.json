@@ -1,0 +1,19 @@
+{
+  "status": "business_outcome",
+  "capability": "member.open_sub_account",
+  "version": "0.1.0",
+  "run_id": "20261007T181903-replay-16e2f0",
+  "outputs": {},
+  "outcome": {
+    "name": "OPENING_DEPOSIT_BELOW_MINIMUM",
+    "description": "The sub-account was not opened because the opening deposit is below the $5.00 minimum.",
+    "message": "Opening deposit must be at least $5.00."
+  },
+  "error": null,
+  "side_effects": "none",
+  "recoveries": [
+    "login x1"
+  ],
+  "warnings": [],
+  "handoffs": 0
+}

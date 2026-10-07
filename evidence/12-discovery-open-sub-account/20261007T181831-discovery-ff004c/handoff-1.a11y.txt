@@ -1,0 +1,61 @@
+--- frame (top) /
+(no content)
+--- frame banner /banner
+- table:
+  - rowgroup:
+    - row "Harbor Federal Credit Union HarborCore Teller 4.2 · Operator [secret:username]":
+      - cell "Harbor Federal Credit Union"
+      - cell "HarborCore Teller 4.2 · Operator [secret:username]"
+--- frame nav /nav
+- table:
+  - rowgroup:
+    - row "Member Lookup":
+      - cell "Member Lookup":
+        - link "Member Lookup":
+          - /url: /lookup
+    - row "Reports":
+      - cell "Reports":
+        - link "Reports":
+          - /url: /reports
+    - row "Admin Console":
+      - cell "Admin Console":
+        - link "Admin Console":
+          - /url: /admin
+    - row "Vendor Support":
+      - cell "Vendor Support":
+        - link "Vendor Support":
+          - /url: http://support.example.invalid/
+    - row "Sign Off":
+      - cell "Sign Off":
+        - link "Sign Off":
+          - /url: /logout
+--- frame main /subacct/review
+- table:
+  - rowgroup:
+    - 'row "Review Sub-Account Review the details below. This will move funds from share savings. Member No: {{member_id}} Account Type: {{account_type}} Nickname: {{nickname}} Opening Deposit: ${{deposit}} Confirm and Open Account Cancel"':
+      - 'cell "Review Sub-Account Review the details below. This will move funds from share savings. Member No: {{member_id}} Account Type: {{account_type}} Nickname: {{nickname}} Opening Deposit: ${{deposit}} Confirm and Open Account Cancel"':
+        - text: Review Sub-Account
+        - separator
+        - paragraph: Review the details below. This will move funds from share savings.
+        - table:
+          - rowgroup:
+            - 'row "Member No: {{member_id}} Account Type: {{account_type}} Nickname: {{nickname}} Opening Deposit: ${{deposit}}"':
+              - 'cell "Member No: {{member_id}} Account Type: {{account_type}} Nickname: {{nickname}} Opening Deposit: ${{deposit}}"':
+                - table:
+                  - rowgroup:
+                    - 'row "Member No: {{member_id}}"':
+                      - cell "Member No:"
+                      - cell "{{member_id}}"
+                    - 'row "Account Type: {{account_type}}"':
+                      - cell "Account Type:"
+                      - cell "{{account_type}}"
+                    - 'row "Nickname: {{nickname}}"':
+                      - cell "Nickname:"
+                      - cell "{{nickname}}"
+                    - 'row "Opening Deposit: ${{deposit}}"':
+                      - cell "Opening Deposit:"
+                      - cell "${{deposit}}"
+        - button "Confirm and Open Account"
+        - paragraph:
+          - link "Cancel":
+            - /url: /member?id={{member_id}}

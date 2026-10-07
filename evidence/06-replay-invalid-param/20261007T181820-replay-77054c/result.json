@@ -1,0 +1,21 @@
+{
+  "status": "failed",
+  "capability": "member.read_savings_balance",
+  "version": "0.1.1",
+  "run_id": "20261007T181820-replay-77054c",
+  "outputs": {},
+  "outcome": null,
+  "error": {
+    "kind": "PARAM_INVALID",
+    "step": null,
+    "phase": "preflight",
+    "expected": "valid parameters",
+    "observed": "member_id: does not match \\d{5}",
+    "retryable": false,
+    "evidence": {}
+  },
+  "side_effects": "none",
+  "recoveries": [],
+  "warnings": [],
+  "handoffs": 0
+}

@@ -1,0 +1,15 @@
+{"seq": 1, "ts": "2026-10-07T18:19:27.339+00:00", "type": "run_started", "kind": "replay", "name": "member.open_sub_account"}
+{"seq": 2, "ts": "2026-10-07T18:19:27.340+00:00", "type": "replay_started", "capability": "member.open_sub_account", "version": "0.1.1", "status": "approved", "tenant": "harbor", "params": {"member_id": "{{member_id}}", "account_type": "{{account_type}}", "nickname": "{{nickname}}", "deposit": "{{deposit}}"}, "dry_run": true}
+{"seq": 3, "ts": "2026-10-07T18:19:27.635+00:00", "type": "session_opened", "tenant": "harbor", "product": "harborcore", "origin": "127.0.0.1:8765", "overrides": [], "unused_overrides": []}
+{"seq": 4, "ts": "2026-10-07T18:19:27.957+00:00", "type": "recovery_applied", "name": "login", "then": "restart", "count": 1}
+{"seq": 5, "ts": "2026-10-07T18:19:28.178+00:00", "type": "step_done", "step": "s1", "action": "click", "target": "link_member_lookup", "risk": "safe"}
+{"seq": 6, "ts": "2026-10-07T18:19:28.211+00:00", "type": "step_done", "step": "s2", "action": "type", "target": "textbox_member_number", "risk": "safe"}
+{"seq": 7, "ts": "2026-10-07T18:19:28.404+00:00", "type": "step_done", "step": "s3", "action": "click", "target": "button_search", "risk": "safe"}
+{"seq": 8, "ts": "2026-10-07T18:19:28.606+00:00", "type": "step_done", "step": "s4", "action": "click", "target": "link_view", "risk": "safe"}
+{"seq": 9, "ts": "2026-10-07T18:19:28.807+00:00", "type": "step_done", "step": "s5", "action": "click", "target": "link_open_sub_account", "risk": "safe"}
+{"seq": 10, "ts": "2026-10-07T18:19:28.847+00:00", "type": "step_done", "step": "s6", "action": "select", "target": "combobox_account_type", "risk": "safe"}
+{"seq": 11, "ts": "2026-10-07T18:19:28.862+00:00", "type": "step_done", "step": "s7", "action": "type", "target": "textbox_nickname", "risk": "safe"}
+{"seq": 12, "ts": "2026-10-07T18:19:28.876+00:00", "type": "step_done", "step": "s8", "action": "type", "target": "textbox_opening_deposit", "risk": "safe"}
+{"seq": 13, "ts": "2026-10-07T18:19:29.069+00:00", "type": "step_done", "step": "s9", "action": "click", "target": "button_continue", "risk": "safe"}
+{"seq": 14, "ts": "2026-10-07T18:19:29.092+00:00", "type": "control_history", "transfers": []}
+{"seq": 15, "ts": "2026-10-07T18:19:29.093+00:00", "type": "run_finished", "status": "success", "side_effects": "none", "error": null}

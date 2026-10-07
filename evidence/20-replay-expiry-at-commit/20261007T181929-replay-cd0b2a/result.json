@@ -1,0 +1,28 @@
+{
+  "status": "needs_human",
+  "capability": "member.open_sub_account",
+  "version": "0.1.1",
+  "run_id": "20261007T181929-replay-cd0b2a",
+  "outputs": {},
+  "outcome": null,
+  "error": {
+    "kind": "UNSAFE_RESTART",
+    "step": "s11",
+    "phase": "wait",
+    "expected": "login requires restarting the flow",
+    "observed": "side effects are unknown",
+    "retryable": false,
+    "evidence": {
+      "screenshot": "evidence/20-replay-expiry-at-commit/20261007T181929-replay-cd0b2a/failure-1.png",
+      "snapshot": "evidence/20-replay-expiry-at-commit/20261007T181929-replay-cd0b2a/failure-1.a11y.txt"
+    }
+  },
+  "side_effects": "unknown",
+  "recoveries": [
+    "login x2"
+  ],
+  "warnings": [
+    "UNSAFE_RESTART at s11: operator -> unrouted"
+  ],
+  "handoffs": 0
+}

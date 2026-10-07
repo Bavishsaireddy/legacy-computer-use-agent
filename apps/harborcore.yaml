@@ -1,0 +1,67 @@
+# App profile: what is true of the HarborCore product at every institution.
+# Hand-authored once per vendor product; capabilities and tenants layer on top.
+product: harborcore
+entry: /
+
+targets:
+  login_operator:
+    description: operator id field on the sign-on screen
+    locators:
+      - {kind: a11y, role: textbox, row: "Operator ID:"}
+      - {kind: near_text, role: textbox, text: "Operator ID:"}
+  login_password:
+    description: password field on the sign-on screen
+    locators:
+      - {kind: a11y, role: textbox, row: "Password:"}
+      - {kind: near_text, role: textbox, text: "Password:"}
+  login_submit:
+    description: sign-on button
+    locators:
+      - {kind: a11y, role: button, name: Sign On}
+  notice_ack:
+    description: acknowledge button on a system-notice interstitial
+    locators:
+      - {kind: a11y, frame: [main], role: button, name: Acknowledge}
+  app_error:
+    description: application error page heading
+    locators:
+      - {kind: a11y, frame: [main], role: text, name: Application Error}
+  access_restricted:
+    description: authorisation refusal message
+    locators:
+      - {kind: a11y, frame: [main], role: text, name: You are not authorized to view this member record.}
+
+# Recoverable interruptions. Login is one of them: a fresh session and an
+# expired one look the same, so one rule covers both.
+recoveries:
+  - name: login
+    when: login_operator
+    do:
+      - {action: type, target: login_operator, value: "{{secret.username}}"}
+      - {action: type, target: login_password, value: "{{secret.password}}"}
+      - {action: click, target: login_submit}
+    then: restart
+    max: 2
+  - name: system_notice
+    when: notice_ack
+    do:
+      - {action: click, target: notice_ack}
+    then: resume
+    max: 2
+
+# Business outcomes that can follow any step.
+outcomes:
+  - name: PERMISSION_DENIED
+    description: the operator is not authorised to view this record
+    when: access_restricted
+
+# States that are always a hard failure.
+failures:
+  - name: application_error
+    when: app_error
+
+policy:
+  allowed_paths: ["/", "/login", "/banner", "/nav", "/home", "/lookup", "/search", "/member", "/reports", "/subacct/*"]
+  allowed_actions: [click, type, select, extract]
+  irreversible:
+    - {role: button, name: "(?i)confirm|post|delete|purge|close account|transfer"}

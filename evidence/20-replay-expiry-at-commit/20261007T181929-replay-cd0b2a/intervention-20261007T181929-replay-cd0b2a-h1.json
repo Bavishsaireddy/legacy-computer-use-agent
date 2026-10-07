@@ -1,0 +1,16 @@
+{
+  "id": "20261007T181929-replay-cd0b2a-h1",
+  "run_id": "20261007T181929-replay-cd0b2a",
+  "kind": "stuck",
+  "capability": "member.open_sub_account@0.1.1",
+  "goal": "",
+  "step": "s11",
+  "reason": "UNSAFE_RESTART while waiting: side effects are unknown",
+  "expected": "login requires restarting the flow",
+  "screenshot": "evidence/20-replay-expiry-at-commit/20261007T181929-replay-cd0b2a/failure-1.png",
+  "snapshot": "evidence/20-replay-expiry-at-commit/20261007T181929-replay-cd0b2a/failure-1.a11y.txt",
+  "options": [
+    "done",
+    "abort"
+  ]
+}

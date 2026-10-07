@@ -1,0 +1,16 @@
+{"seq": 1, "ts": "2026-10-07T18:19:03.324+00:00", "type": "run_started", "kind": "replay", "name": "member.open_sub_account"}
+{"seq": 2, "ts": "2026-10-07T18:19:03.324+00:00", "type": "replay_started", "capability": "member.open_sub_account", "version": "0.1.0", "status": "draft", "tenant": "harbor", "params": {"member_id": "{{member_id}}", "account_type": "{{account_type}}", "nickname": "{{nickname}}", "deposit": "{{deposit}}"}, "dry_run": true}
+{"seq": 3, "ts": "2026-10-07T18:19:03.643+00:00", "type": "session_opened", "tenant": "harbor", "product": "harborcore", "origin": "127.0.0.1:8765", "overrides": [], "unused_overrides": []}
+{"seq": 4, "ts": "2026-10-07T18:19:03.978+00:00", "type": "recovery_applied", "name": "login", "then": "restart", "count": 1}
+{"seq": 5, "ts": "2026-10-07T18:19:04.199+00:00", "type": "step_done", "step": "s1", "action": "click", "target": "link_member_lookup", "risk": "safe"}
+{"seq": 6, "ts": "2026-10-07T18:19:04.234+00:00", "type": "step_done", "step": "s2", "action": "type", "target": "textbox_member_number", "risk": "safe"}
+{"seq": 7, "ts": "2026-10-07T18:19:04.424+00:00", "type": "step_done", "step": "s3", "action": "click", "target": "button_search", "risk": "safe"}
+{"seq": 8, "ts": "2026-10-07T18:19:04.627+00:00", "type": "step_done", "step": "s4", "action": "click", "target": "link_view", "risk": "safe"}
+{"seq": 9, "ts": "2026-10-07T18:19:04.826+00:00", "type": "step_done", "step": "s5", "action": "click", "target": "link_open_sub_account", "risk": "safe"}
+{"seq": 10, "ts": "2026-10-07T18:19:04.866+00:00", "type": "step_done", "step": "s6", "action": "select", "target": "combobox_account_type", "risk": "safe"}
+{"seq": 11, "ts": "2026-10-07T18:19:04.882+00:00", "type": "step_done", "step": "s7", "action": "type", "target": "textbox_nickname", "risk": "safe"}
+{"seq": 12, "ts": "2026-10-07T18:19:04.896+00:00", "type": "step_done", "step": "s8", "action": "type", "target": "textbox_opening_deposit", "risk": "safe"}
+{"seq": 13, "ts": "2026-10-07T18:19:05.091+00:00", "type": "step_done", "step": "s9", "action": "click", "target": "button_continue", "risk": "safe"}
+{"seq": 14, "ts": "2026-10-07T18:19:16.224+00:00", "type": "model_turn", "turn": 1, "said": "", "calls": [{"tool": "report_outcome", "input": {"name": "OPENING_DEPOSIT_BELOW_MINIMUM", "ref": "e15", "description": "The sub-account was not opened because the opening deposit is below the $5.00 minimum."}}], "input_tokens": 4, "cached_input_tokens": 0, "output_tokens": 197}
+{"seq": 15, "ts": "2026-10-07T18:19:16.244+00:00", "type": "control_history", "transfers": []}
+{"seq": 16, "ts": "2026-10-07T18:19:16.245+00:00", "type": "run_finished", "status": "business_outcome", "side_effects": "none", "error": null}

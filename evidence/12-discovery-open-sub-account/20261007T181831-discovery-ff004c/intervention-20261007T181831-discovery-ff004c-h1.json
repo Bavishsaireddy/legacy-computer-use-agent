@@ -1,0 +1,16 @@
+{
+  "id": "20261007T181831-discovery-ff004c-h1",
+  "run_id": "20261007T181831-discovery-ff004c",
+  "kind": "approval",
+  "capability": "member.open_sub_account",
+  "goal": "Open a new {{account_type}} sub-account for member {{member_id}} with nickname {{nickname}} and an opening deposit of {{deposit}}, confirm it, and read the confirmation number.",
+  "step": "step 10",
+  "reason": "button \"Confirm and Open Account\" is irreversible and needs approval",
+  "expected": "",
+  "screenshot": "evidence/12-discovery-open-sub-account/20261007T181831-discovery-ff004c/handoff-1.png",
+  "snapshot": "evidence/12-discovery-open-sub-account/20261007T181831-discovery-ff004c/handoff-1.a11y.txt",
+  "options": [
+    "approve",
+    "deny"
+  ]
+}

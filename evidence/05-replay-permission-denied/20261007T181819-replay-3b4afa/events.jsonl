@@ -1,0 +1,9 @@
+{"seq": 1, "ts": "2026-10-07T18:18:19.327+00:00", "type": "run_started", "kind": "replay", "name": "member.read_savings_balance"}
+{"seq": 2, "ts": "2026-10-07T18:18:19.327+00:00", "type": "replay_started", "capability": "member.read_savings_balance", "version": "0.1.1", "status": "draft", "tenant": "harbor", "params": {"member_id": "{{member_id}}"}, "dry_run": false}
+{"seq": 3, "ts": "2026-10-07T18:18:19.632+00:00", "type": "session_opened", "tenant": "harbor", "product": "harborcore", "origin": "127.0.0.1:8765", "overrides": [], "unused_overrides": []}
+{"seq": 4, "ts": "2026-10-07T18:18:19.960+00:00", "type": "recovery_applied", "name": "login", "then": "restart", "count": 1}
+{"seq": 5, "ts": "2026-10-07T18:18:20.180+00:00", "type": "step_done", "step": "s1", "action": "click", "target": "link_member_lookup", "risk": "safe"}
+{"seq": 6, "ts": "2026-10-07T18:18:20.215+00:00", "type": "step_done", "step": "s2", "action": "type", "target": "textbox_member_number", "risk": "safe"}
+{"seq": 7, "ts": "2026-10-07T18:18:20.407+00:00", "type": "step_done", "step": "s3", "action": "click", "target": "button_search", "risk": "safe"}
+{"seq": 8, "ts": "2026-10-07T18:18:20.444+00:00", "type": "control_history", "transfers": []}
+{"seq": 9, "ts": "2026-10-07T18:18:20.445+00:00", "type": "run_finished", "status": "business_outcome", "side_effects": "none", "error": null}

@@ -1,0 +1,28 @@
+{
+  "status": "needs_human",
+  "capability": "member.open_sub_account",
+  "version": "0.1.1",
+  "run_id": "20261007T181919-replay-da70d4",
+  "outputs": {},
+  "outcome": null,
+  "error": {
+    "kind": "APP_ERROR",
+    "step": "s11",
+    "phase": "wait",
+    "expected": "cell_confirmation_number (cell in row \"Confirmation Number:\")",
+    "observed": "application_error: [(top) /]   [banner /banner] Harbor Federal Credit Union | HarborCore Teller 4.2 \u00b7 Operator [secret:username]  [nav /nav]   [main /subacct/confirm] Application Error | \"HC-5001: An unexpected error occurred. Contact support.\"",
+    "retryable": false,
+    "evidence": {
+      "screenshot": "evidence/16-replay-commit-unknown/20261007T181919-replay-da70d4/failure-1.png",
+      "snapshot": "evidence/16-replay-commit-unknown/20261007T181919-replay-da70d4/failure-1.a11y.txt"
+    }
+  },
+  "side_effects": "unknown",
+  "recoveries": [
+    "login x1"
+  ],
+  "warnings": [
+    "APP_ERROR at s11: operator -> unrouted"
+  ],
+  "handoffs": 0
+}

@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "capability": "member.read_savings_balance",
+  "version": "0.1.1",
+  "run_id": "20261007T181825-replay-861471",
+  "outputs": {
+    "share_savings_balance": "[output:share_savings_balance]"
+  },
+  "outcome": null,
+  "error": null,
+  "side_effects": "none",
+  "recoveries": [
+    "login x1"
+  ],
+  "warnings": [
+    "APP_ERROR at s2: operator -> retry"
+  ],
+  "handoffs": 1
+}

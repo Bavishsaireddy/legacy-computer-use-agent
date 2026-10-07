@@ -1,0 +1,23 @@
+[project]
+name = "cua"
+version = "0.1.0"
+description = "Record-once / replay-many computer-use capabilities for legacy back-office apps"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.116",
+    "playwright>=1.55",
+    "pydantic>=2.8",
+    "pyyaml>=6",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+# Run from the repo root with `python -m cua`; nothing is installed as a package,
+# so there is no editable-install path file to go missing.
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,98 @@
+schema_version: '1'
+capability: member.read_savings_balance
+version: 0.1.1
+status: draft
+description: Look up member {{member_id}} and read their current share savings balance.
+app:
+  product: harborcore
+  versions: '*'
+entry: /
+params:
+  member_id:
+    type: string
+    pattern: \d{5}
+    sensitivity: pii
+outputs:
+  share_savings_balance:
+    type: money
+    sensitivity: financial
+targets:
+  link_member_lookup:
+    description: link "Member Lookup"
+    locators:
+    - {kind: a11y, frame: [nav], role: link, name: Member Lookup}
+    - {kind: near_text, frame: [nav], role: link, text: Member Lookup}
+  textbox_member_number:
+    description: textbox in row "Member Number:"
+    locators:
+    - {kind: a11y, frame: [main], role: textbox, row: 'Member Number:'}
+    - {kind: near_text, frame: [main], role: textbox, text: 'Member Number:'}
+  button_search:
+    description: button "Search"
+    locators:
+    - {kind: a11y, frame: [main], role: button, name: Search}
+    - {kind: near_text, frame: [main], role: button, text: Search}
+  link_view:
+    description: link "View"
+    locators:
+    - {kind: a11y, frame: [main], role: link, name: View}
+    - {kind: near_text, frame: [main], role: link, text: View}
+  cell_share_savings_balance:
+    description: cell in row "Share Savings Balance:"
+    locators:
+    - {kind: a11y, frame: [main], role: cell, row: 'Share Savings Balance:', nth: 1}
+    - {kind: near_text, frame: [main], role: cell, text: 'Share Savings Balance:'}
+  text_no_member_on_file_for_number:
+    description: text "No member on file for number {{member_id}}."
+    locators:
+    - {kind: a11y, frame: [main], role: text, name: 'No member on file for number {{member_id}}.'}
+steps:
+- id: s1
+  action: click
+  target: link_member_lookup
+  risk: safe
+  note: Open Member Lookup to search for the member.
+  timeout_ms: 8000
+- id: s2
+  action: type
+  target: textbox_member_number
+  value: '{{member_id}}'
+  risk: safe
+  note: Enter the member number.
+  timeout_ms: 8000
+- id: s3
+  action: click
+  target: button_search
+  risk: safe
+  note: Search for the member.
+  outcomes:
+  - name: MEMBER_NOT_FOUND
+    description: There is no member on file for the member number that was entered, so no share savings balance
+      can be read.
+    when: text_no_member_on_file_for_number
+  timeout_ms: 8000
+- id: s4
+  action: click
+  target: link_view
+  risk: safe
+  note: Open the member's account details.
+  timeout_ms: 8000
+- id: s5
+  action: extract
+  target: cell_share_savings_balance
+  output: share_savings_balance
+  risk: safe
+  note: Record the member's current share savings balance.
+  timeout_ms: 8000
+success: cell_share_savings_balance
+provenance:
+  discovered_by: claude-opus-5-5
+  discovered_at: '2026-10-07T18:18:00.348+00:00'
+  discovery_run: 20261007T181743-discovery-ca281a
+  verified: true
+  verification:
+  - '20261007T181800-replay-f8ebf0: success'
+  - '20261007T181801-replay-d6ec8f: success'
+  notes:
+  - param patterns and sensitivities are inferred; review before approval
+  - outcome MEMBER_NOT_FOUND learned by probe run 20261007T181803-replay-8f2798 (claude-opus-5-5)

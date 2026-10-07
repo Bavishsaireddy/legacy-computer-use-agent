@@ -1,0 +1,3 @@
+{"seq": 1, "ts": "2026-10-07T18:19:16.570+00:00", "type": "run_started", "kind": "replay", "name": "member.open_sub_account"}
+{"seq": 2, "ts": "2026-10-07T18:19:16.570+00:00", "type": "replay_started", "capability": "member.open_sub_account", "version": "0.1.1", "status": "draft", "tenant": "harbor", "params": {"member_id": "{{member_id}}", "account_type": "{{account_type}}", "nickname": "{{nickname}}", "deposit": "{{deposit}}"}, "dry_run": false}
+{"seq": 3, "ts": "2026-10-07T18:19:16.570+00:00", "type": "run_finished", "status": "failed", "side_effects": "none", "error": "APPROVAL_REQUIRED"}

@@ -1,0 +1,27 @@
+--- frame (top) /login
+- table:
+  - rowgroup:
+    - 'row "Harbor Federal Credit Union - Sign On Your session has expired. Operator ID: Password: Sign On HarborCore Teller 4.2 · Authorized personnel only"':
+      - 'cell "Harbor Federal Credit Union - Sign On Your session has expired. Operator ID: Password: Sign On HarborCore Teller 4.2 · Authorized personnel only"':
+        - text: Harbor Federal Credit Union - Sign On
+        - separator
+        - text: Your session has expired.
+        - table:
+          - rowgroup:
+            - 'row "Operator ID: Password: Sign On"':
+              - 'cell "Operator ID: Password: Sign On"':
+                - table:
+                  - rowgroup:
+                    - row "Operator ID:":
+                      - cell "Operator ID:"
+                      - cell:
+                        - textbox
+                    - row "Password:":
+                      - cell "Password:"
+                      - cell:
+                        - textbox
+                    - row "Sign On":
+                      - cell
+                      - cell "Sign On":
+                        - button "Sign On"
+        - paragraph: HarborCore Teller 4.2 · Authorized personnel only

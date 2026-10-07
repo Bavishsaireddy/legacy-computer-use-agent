@@ -1,0 +1,10 @@
+{"seq": 1, "ts": "2026-10-07T18:18:03.923+00:00", "type": "run_started", "kind": "replay", "name": "member.read_savings_balance"}
+{"seq": 2, "ts": "2026-10-07T18:18:03.923+00:00", "type": "replay_started", "capability": "member.read_savings_balance", "version": "0.1.0", "status": "draft", "tenant": "harbor", "params": {"member_id": "{{member_id}}"}, "dry_run": true}
+{"seq": 3, "ts": "2026-10-07T18:18:04.246+00:00", "type": "session_opened", "tenant": "harbor", "product": "harborcore", "origin": "127.0.0.1:8765", "overrides": [], "unused_overrides": []}
+{"seq": 4, "ts": "2026-10-07T18:18:04.579+00:00", "type": "recovery_applied", "name": "login", "then": "restart", "count": 1}
+{"seq": 5, "ts": "2026-10-07T18:18:04.798+00:00", "type": "step_done", "step": "s1", "action": "click", "target": "link_member_lookup", "risk": "safe"}
+{"seq": 6, "ts": "2026-10-07T18:18:04.832+00:00", "type": "step_done", "step": "s2", "action": "type", "target": "textbox_member_number", "risk": "safe"}
+{"seq": 7, "ts": "2026-10-07T18:18:05.026+00:00", "type": "step_done", "step": "s3", "action": "click", "target": "button_search", "risk": "safe"}
+{"seq": 8, "ts": "2026-10-07T18:18:16.124+00:00", "type": "model_turn", "turn": 1, "said": "", "calls": [{"tool": "report_outcome", "input": {"name": "MEMBER_NOT_FOUND", "ref": "e15", "description": "There is no member on file for the member number that was entered, so no share savings balance can be read."}}], "input_tokens": 4, "cached_input_tokens": 0, "output_tokens": 131}
+{"seq": 9, "ts": "2026-10-07T18:18:16.145+00:00", "type": "control_history", "transfers": []}
+{"seq": 10, "ts": "2026-10-07T18:18:16.145+00:00", "type": "run_finished", "status": "business_outcome", "side_effects": "none", "error": null}

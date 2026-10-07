@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "capability": "member.read_savings_balance",
+  "version": "0.1.0",
+  "run_id": "20261007T181801-replay-d6ec8f",
+  "outputs": {
+    "share_savings_balance": "[output:share_savings_balance]"
+  },
+  "outcome": null,
+  "error": null,
+  "side_effects": "none",
+  "recoveries": [
+    "login x1"
+  ],
+  "warnings": [],
+  "handoffs": 0
+}

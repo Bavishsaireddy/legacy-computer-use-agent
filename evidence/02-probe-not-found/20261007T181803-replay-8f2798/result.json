@@ -1,0 +1,19 @@
+{
+  "status": "business_outcome",
+  "capability": "member.read_savings_balance",
+  "version": "0.1.0",
+  "run_id": "20261007T181803-replay-8f2798",
+  "outputs": {},
+  "outcome": {
+    "name": "MEMBER_NOT_FOUND",
+    "description": "There is no member on file for the member number that was entered, so no share savings balance can be read.",
+    "message": "No member on file for number {{member_id}}."
+  },
+  "error": null,
+  "side_effects": "none",
+  "recoveries": [
+    "login x1"
+  ],
+  "warnings": [],
+  "handoffs": 0
+}

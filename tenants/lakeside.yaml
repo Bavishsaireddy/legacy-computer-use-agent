@@ -1,0 +1,21 @@
+# A second institution on the same vendor product. Only what differs is stated:
+# where it lives, and the controls whose captions this institution relabelled.
+tenant: lakeside
+product: harborcore
+base_url: http://127.0.0.1:8766
+secrets_env:
+  username: LAKESIDE_USERNAME
+  password: LAKESIDE_PASSWORD
+target_overrides:
+  textbox_member_number:
+    description: textbox in row "Account Holder No:"
+    locators:
+      - {kind: a11y, frame: [main], role: textbox, row: "Account Holder No:"}
+  button_search:
+    description: button "Find"
+    locators:
+      - {kind: a11y, frame: [main], role: button, name: Find}
+  cell_share_savings_balance:
+    description: cell in row "Primary Savings Bal:"
+    locators:
+      - {kind: a11y, frame: [main], role: cell, row: "Primary Savings Bal:", nth: 1}
